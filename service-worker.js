@@ -1,21 +1,25 @@
-const CACHE_NAME = "snake-pwa-cache-v4";
-const FILES = [
-  "index.html",
-  "styles.css",
-  "script.js",
-  "manifest.json"
+const CACHE_NAME = "acuario-pwa-v1";
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/styles.css",
+  "/script.js",
+  "/manifest.json",
+  "/images/logo.png"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES))
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(FILES_TO_CACHE);
+    })
   );
 });
 
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(
-      response => response || fetch(event.request)
-    )
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request);
+    })
   );
 });
