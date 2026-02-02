@@ -1,0 +1,87 @@
+/* styles.css */
+
+body {
+    background-color: lightblue; /* Color de fondo */
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+}
+
+header {
+    display: flex; /* Flexbox para el header */
+    justify-content: space-between; /* Espacio entre logo y menú */
+    align-items: center; /* Alineación vertical */
+    padding: 10px; /* Padding del header */
+    background-color: #007BFF; /* Color de fondo del header */
+    color: white; /* Color del texto en el header */
+}
+
+.logo img {
+    max-width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+nav ul {
+    display: flex; /* Flexbox para el menú */
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+nav button {
+    padding: 10px 15px; /* Espaciado interno del botón */
+    background-color: #4CAF50; /* Color de fondo de los botones */
+    color: white; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+nav button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+.gallery {
+    display: flex; /* Flexbox para la galería */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
+    justify-content: space-around; /* Espaciado entre los elementos */
+    margin: 20px; /* Margen alrededor de la galería */
+}
+
+.item {
+    border: 1px solid black; /* Borde alrededor de cada item */
+    margin: 10px; /* Margen alrededor de cada item */
+    padding: 10px; /* Padding interno de cada item */
+    width: 100px; /* Ancho fijo para cada item */
+    text-align: center; /* Centra el texto dentro de cada item */
+}
+
+.image img {
+    max-width: 150px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    margin: 10px; /* Margen alrededor de cada imagen */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+.social-media {
+    display: flex; /* Flexbox para las redes sociales */
+    justify-content: space-around; /* Espaciado entre los botones de redes sociales */
+    margin: 20px 0; /* Margen arriba y abajo de la sección de redes sociales */
+}
+
+.footer {
+    text-align: center; /* Centra el texto en el pie de página */
+    margin: 20px 0; /* Margen arriba y abajo del pie de página */
+}
+
+.image-center {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    margin: 20px 0; /* Margen arriba y abajo */
+}
+
+.image-center img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
