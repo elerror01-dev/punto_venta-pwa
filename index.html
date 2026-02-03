@@ -1,10 +1,119 @@
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("service-worker.js")
-      .then(() => console.log("PWA lista ✅"))
-      .catch(err => console.log("Error PWA ❌", err));
-  });
-}
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título -->
+    <title>Página Web PWA</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="manifest.json">
+
+
+    
+    <!-- Color de la app (barra superior en móvil) -->
+    <meta name="theme-color" content="#0d6efd">
+
+    <!-- Icono para iOS -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <button onclick="location.href='animales.html'">Animales</button>
+                </li>
+                <li>
+                    <button onclick="location.href='plantas.html'">Plantas</button>
+                </li>
+                <li>
+                    <button onclick="location.href='insumos.html'">Insumos</button>
+                </li>
+                <li>
+                    <form action="https://www.google.com/search" method="get" style="display: inline;">
+                        <input type="text" name="q" placeholder="Buscar..." required>
+                        <button type="submit">Buscar</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="item">
+                <div class="image">
+                    <img src="images/3.jpg" alt="Hamster">
+                </div>
+                <div class="info">Info hamster $100</div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="images/1.jpg" alt="Cuyo">
+                </div>
+                <div class="info">Info cuyo $300</div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="images/2.jpg" alt="Rata">
+                </div>
+                <div class="info">Info rata $45</div>
+            </div>
+
+            <div class="item">
+                <div class="image">
+                    <img src="images/4.jpg" alt="Ratón">
+                </div>
+                <div class="info">Info ratón $40</div>
+            </div>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">
+                <button>Facebook</button>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <button>Instagram</button>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+                <button>WhatsApp</button>
+            </a>
+        </div>
+
+        <div class="footer">
+            <button>Descubre el mundo acuático</button>
+        </div>
+
+        <div class="image-center">
+            <img src="images/6.jpg" alt="Acuario">
+        </div>
+    </main>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+
+    <!-- Registro del Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("service-worker.js")
+                    .then(reg => console.log("Service Worker registrado ✔", reg))
+                    .catch(err => console.log("Error en Service Worker ❌", err));
+            });
+        }
+    </script>
+</body>
+</html>
