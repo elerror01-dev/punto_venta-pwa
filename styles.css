@@ -1,167 +1,114 @@
-/* styles.css */
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
-    background-color: lightblue; /* Color de fondo */
-    font-family: Arial, sans-serif; /* Fuente general */
-    margin: 0; /* Sin margen */
-    padding: 0; /* Sin padding */
+  background-color: #f2f2f2;
+  min-height: 100vh;
 }
 
-header {
-    display: flex; /* Flexbox para el header */
-    justify-content: space-between; /* Espacio entre logo y menú */
-    align-items: center; /* Alineación vertical */
-    padding: 10px; /* Padding del header */
-    background-color: #007BFF; /* Color de fondo del header */
-    color: white; /* Color del texto en el header */
-}
-
-.logo img {
-    max-width: 100px; /* Ajusta el tamaño del logo según sea necesario */
-}
-
-nav ul {
-    display: flex; /* Flexbox para el menú */
-    list-style-type: none; /* Sin viñetas */
-    padding: 0; /* Sin padding */
-}
-
-nav ul li {
-    margin: 0 15px; /* Espaciado entre los elementos del menú */
-}
-
-nav button {
-    padding: 10px 15px; /* Espaciado interno del botón */
-    background-color: #4CAF50; /* Color de fondo de los botones */
-    color: white; /* Color del texto de los botones */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-}
-
-nav button:hover {
-    background-color: #45a049; /* Color de fondo al pasar el mouse */
-}
-
-.gallery {
-    display: flex; /* Flexbox para la galería */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
-    justify-content: space-around; /* Espaciado entre los elementos */
-    margin: 20px; /* Margen alrededor de la galería */
-}
-
-.item {
-    border: 1px solid black; /* Borde alrededor de cada item */
-    margin: 10px; /* Margen alrededor de cada item */
-    padding: 10px; /* Padding interno de cada item */
-    width: 100px; /* Ancho fijo para cada item */
-    text-align: center; /* Centra el texto dentro de cada item */
-}
-
-.image img {
-    max-width: 150px; /* Ajusta el tamaño de las imágenes según sea necesario */
-    margin: 10px; /* Margen alrededor de cada imagen */
-    border-radius: 8px; /* Bordes redondeados para las imágenes */
-}
-
-.social-media {
-    display: flex; /* Flexbox para las redes sociales */
-    justify-content: space-around; /* Espaciado entre los botones de redes sociales */
-    margin: 20px 0; /* Margen arriba y abajo de la sección de redes sociales */
-}
-
-.footer {
-    text-align: center; /* Centra el texto en el pie de página */
-    margin: 20px 0; /* Margen arriba y abajo del pie de página */
-}
-
-.image-center {
-    display: flex; /* Usar flexbox */
-    justify-content: center; /* Centrar horizontalmente */
-    margin: 20px 0; /* Margen arriba y abajo */
-}
-
-.image-center img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-/* Chatbot */
+/* ===== BOTÓN FLOTANTE DEL CHATBOT ===== */
 #chatbot-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #0d6efd;
-  color: white;
-  font-size: 22px;
-  padding: 15px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  background-color: #000000; /* NEGRO */
+  color: #ffffff;
+  border: none;
+  font-size: 26px;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   z-index: 1000;
 }
 
-#chatbot {
+#chatbot-btn:hover {
+  background-color: #222222;
+}
+
+/* ===== CONTENEDOR DEL CHAT ===== */
+#chatbot-container {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 280px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.3);
-  display: none;
+  width: 300px;
+  height: 380px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  display: none; /* OCULTO POR DEFECTO */
   flex-direction: column;
-  z-index: 1000;
+  overflow: hidden;
+  z-index: 999;
 }
 
-.chat-header {
-  background: #0d6efd;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
+/* ===== HEADER DEL CHAT ===== */
+#chatbot-header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
 }
 
-#chat-body {
-  height: 200px;
+/* ===== CUERPO DEL CHAT ===== */
+#chatbot-messages {
+  flex: 1;
   padding: 10px;
   overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+/* MENSAJES */
+.message {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
   font-size: 14px;
+  max-width: 85%;
 }
 
-.chat-input {
+/* MENSAJE DEL BOT */
+.bot {
+  background-color: #e0e0e0;
+  color: #000;
+  align-self: flex-start;
+}
+
+/* MENSAJE DEL USUARIO */
+.user {
+  background-color: #000000;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+/* ===== INPUT DEL CHAT ===== */
+#chatbot-input {
   display: flex;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ddd;
 }
 
-.chat-input input {
+#chatbot-input input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
   border: none;
+  outline: none;
 }
 
-.chat-input button {
-  background: #0d6efd;
-  color: white;
+#chatbot-input button {
+  background-color: #000000;
+  color: #ffffff;
   border: none;
-  padding: 8px;
+  padding: 10px 15px;
   cursor: pointer;
 }
 
-.bot {
-  color: #0d6efd;
-  margin-bottom: 5px;
-}
-
-.user {
-  text-align: right;
-  margin-bottom: 5px;
-}
-.bot {
-  color: green;
-  margin: 5px;
-}
-
-.user {
-  color: blue;
-  text-align: right;
-  margin: 5px;
+#chatbot-input button:hover {
+  background-color: #222222;
 }
